@@ -1,0 +1,31 @@
+<h1>Подорожі Україною</h1>
+
+<nav aria-label="Головна навігація">
+    <a href="index.html">Перейти</a>
+    <a href="tours.html">Тури</a>
+    <a href="contacts.html">Контакти</a>
+</nav>
+
+<h2>Популярні напрямки</h2>
+
+<img src="karpaty.jpg" alt="Карпати — гори та природа">
+
+<p>
+    Карпати — популярний напрямок для відпочинку.
+</p>
+
+<h2>Замовлення туру</h2>
+
+<form>
+    <label for="name">Ваше ім'я:</label>
+    <input type="text" id="name" name="name">
+
+    <br><br>
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <br><br>
+
+    <button type="submit">Відправити заявку</button>
+</form>
