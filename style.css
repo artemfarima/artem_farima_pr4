@@ -1,0 +1,149 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Шапка сайту */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 28px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* Навігаційне меню (вимога: display: flex; justify-content: center; gap: 30px;) */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #007bff;
+}
+
+/* Заголовок секції */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Каталог товарів (вимога: CSS Grid з адаптивною сіткою) */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Картка товару */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Нижня частина картки (вимога: ціна зліва, кнопка справа, вирівняні по центру) */
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-bottom span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.card-bottom button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.card-bottom button:hover {
+    background-color: #0056b3;
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Медіа-запит для адаптивності на мобільних пристроях */
+@media (max-width: 600px) {
+    .header {
+        align-items: center;
+    }
+    .menu {
+        gap: 15px;
+    }
+}
