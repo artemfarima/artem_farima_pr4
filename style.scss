@@ -1,0 +1,84 @@
+<div class="container">
+    <h1 class="title">Каталог товарів</h1>
+
+    <div class="catalog">
+        <!-- Картка товару 1 -->
+        <div class="card">
+            <h2>Смартфон</h2>
+            <p>Сучасний гаджет з потужним процесором та якісною камерою.</p>
+            <span class="price">12 000 грн</span>
+            <button>Купити</button>
+        </div>
+
+        <!-- Картка товару 2 -->
+        <div class="card">
+            <h2>Ноутбук</h2>
+            <p>Швидкий та легкий ноутбук для роботи та повсякденних завдань.</p>
+            <span class="price">25 000 грн</span>
+            <button>Купити</button>
+        </div>
+
+        <!-- Картка товару 3 -->
+        <div class="card">
+            <h2>Навушники</h2>
+            <p>Бездротові навушники з чудовим чистим звуком та глибоким басом.</p>
+            <span class="price">2 500 грн</span>
+            <button>Купити</button>
+        </div>
+    </div>
+</div>
+
+/* Змінні */ $primary-color: #007bff; $hover-color: #0056b3; $bg-color: #f8f9fa; $card-bg: #ffffff; $text-main: #333333; $text-muted: #666666; $border-radius: 8px; $spacing: 20px;
+/* Міксин для кнопок із параметрами */ @mixin button-style($bg, $color) { background-color: $bg; color: $color; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;
+
+&:hover {
+    background-color: darken($bg, 10%);
+}
+}
+body { font-family: Arial, sans-serif; background-color: $bg-color; margin: 0; padding: $spacing; }
+.container { max-width: 1000px; margin: 0 auto; }
+.title { text-align: center; color: $text-main; margin-bottom: 30px; }
+/* Вкладеність для сітки та карток */ .catalog { display: grid; grid-template-columns: repeat(3, 1fr); gap: $spacing;
+
+.card {
+    background-color: $card-bg;
+    border: 1px solid #ddd;
+    padding: $spacing;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Ефект :hover для картки */
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        font-size: 20px;
+        color: $text-main;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        color: $text-muted;
+        margin-bottom: 15px;
+    }
+
+    .price {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        color: $text-main;
+        margin-bottom: 15px;
+    }
+
+    button {
+        @include button-style($primary-color, #ffffff);
+        width: 100%;
+    }
+}
+}
+/* Медіа-запит для екранів шириною до 600px */ @media (max-width: 600px) { .catalog { grid-template-columns: 1fr; } }
